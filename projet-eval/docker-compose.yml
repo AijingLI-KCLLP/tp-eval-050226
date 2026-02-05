@@ -1,0 +1,17 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - 8080:80
+    networks:
+      - eval-network
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: secret123
+      MYSQL_DATABASE: eval_db
+
+networks:
+  eval-network:
+    driver: bridge
