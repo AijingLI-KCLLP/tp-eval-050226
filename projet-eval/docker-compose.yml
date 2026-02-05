@@ -11,6 +11,14 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: secret123
       MYSQL_DATABASE: eval_db
+    networks:
+      - eval-network
+    volumes:
+      - mysql-data
+
+
+volumes:
+  - mysql-data
 
 networks:
   eval-network:
